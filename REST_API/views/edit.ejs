@@ -10,46 +10,47 @@
 </head>
 
 <body>
+    <%- include('partials/navbar.ejs') %>
     <div class="container my-3 w-50">
         <h2>Fill below form to Edit and Resubmit Students Details</h2>
-        <form action="/students/<%= id %>?_method=patch" method="post">
+        <form action="/students/<%=student._id %>?_method=patch" method="post">
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Student Name:</label>
                 <input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Student Name"
-                    name="name">
+                    name="name" value="<%= student.name %>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputNumber1" class="form-label">Roll Number:</label>
                 <input type="number" class="form-control" id="" aria-describedby="textHelp" placeholder="Roll Number"
-                name="rollNo">
+                name="rollNo" value="<%= student.rollNo %>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Address:</label>
                 <input type="text" class="form-control" id="" aria-describedby="textHelp" name="address" id=""
-                    placeholder="Enter Address">
+                    placeholder="Enter Address" value="<%= student.address %>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Stream: </label>
                 <input type="text" class="form-control" id="" aria-describedby="textHelp" name="stream" id=""
-                    placeholder="Stream">
+                    placeholder="Stream" value="<%= student.stream %>">
             </div>
             <div class="mb-3">
                 <label class="form-label">Year of Study</label>
                 <input type="text" class="form-control" id="" aria-describedby="textHelp" name="year" id=""
-                    placeholder="Year of Study">
+                    placeholder="Year of Study" value="<%= student.year %>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Phone Number:</label>
                 <input type="number" class="form-control" id="" aria-describedby="numberHelp" name="phone"
-                    placeholder="+91 xxxxx xxxxx">
+                    placeholder="+91 xxxxx xxxxx" value="<%= student.phone %>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email Address:</label>
                 <input type="email" class="form-control" id="" aria-describedby="emailHelp" name="email"
-                    placeholder="abc@xyz.com">
+                    placeholder="abc@xyz.com" value="<%= student.email %>">
             </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 

@@ -54,7 +54,8 @@ router.get('/students/:id', async function(req, res) {
 
 //Step 5 Edit Student Information
 router.get('/students/:id/edit', async (req, res)=>{
-    res.render('edit', { id: req.params.id});
+    const student = await studentModel.findById(req.params.id);
+    res.render('edit', { student});
 });
 
 //Step 6 Update Student Information
@@ -86,5 +87,8 @@ router.delete('/students/:id', async function(req, res){
     }
 });
 
+router.get('*', (req, res) => {
+    res.render('error_page');
+});
 
 module.exports = router;

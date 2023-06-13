@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <%- include('partials/navbar.ejs') %>
     <div class="container my-3 w-50">
         <h2>Fill below form to Submit Students Details</h2>
         <form action="/students" method="post">
@@ -49,7 +50,7 @@
                     placeholder="abc@xyz.com">
             </div>
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-dark">Add Now</button>
         </form>
     </div>
 
