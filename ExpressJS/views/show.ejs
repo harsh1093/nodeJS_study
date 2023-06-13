@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-3 w-50">
+        <h2>Details of Product</h2>
+        <ul class="list-group">
+                <li class="list-group-item mb-2"><strong>Product Name: </strong><%= product.name %></li>
+                <li class="list-group-item mb-2"><strong>Product Price: </strong><%= product.price %></li>
+                <li class="list-group-item mb-2"><strong>Seller Name: </strong><%= product.sellerName %></li>
+                <li class="list-group-item mb-2"><strong>Shop Address: </strong><%= product.shopAddress %></li>
+                <li class="list-group-item mb-2"><strong>Discount (%): </strong><%= product.discount %></li>
+                <li class="list-group-item mb-2"><strong>Product Quantity: </strong><%= product.qty %></li>
+                <li class="list-group-item mb-2"><strong>In Stock: </strong><%= product.isAvailable== true? "Available": "Not Available" %></li>
+        </ul>
+        <form action="/products/<%= product._id %>?_method=delete" method="post">
+            <button type="submit" class="btn btn-danger my-3">Remove from List</button>
+        </form>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+</html>
