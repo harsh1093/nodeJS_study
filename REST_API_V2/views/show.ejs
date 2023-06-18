@@ -12,7 +12,7 @@
 <body>
     <%- include('partials/navbar.ejs') %>
     <div class="container my-3 w-50">
-        <h2>Details of Students</h2>
+        <h2>Details of Employees</h2>
         <ul class="list-group">
                 <li class="list-group-item mb-2"><strong>Employee Name: </strong><%= employee.name %></li>
                 <li class="list-group-item mb-2"><strong>City: </strong><%= employee.city %></li>
@@ -24,7 +24,7 @@
                 <li class="list-group-item mb-2"><strong>Supervisor Name: </strong><%= employee.supervisor %></li>
         </ul>
         <a href="/employees/<%= employee._id %>/edit"><button type="submit" class="btn btn-warning my-3">Edit Info</button></a>
-        <form action="/employees/<%= employee._id %>?_method=delete" method="post">
+        <form action="/employees/<%= employee.id %>?_method=delete" method="post">
             <button type="submit" class="btn btn-danger my-3">Remove from List</button>
         </form>
     </div>

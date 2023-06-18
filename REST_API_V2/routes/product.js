@@ -90,7 +90,7 @@ router.patch('/employees/:id', async (req, res) => {
 
 //Destroy the employee information
 
-router.delete('/employees/:id', async (req, res) => {
+router.delete('/employees/:id', async function(req, res) {
     try {
         await employeeModel.findByIdAndDelete(req.body.id);
         res.redirect('/employees');
